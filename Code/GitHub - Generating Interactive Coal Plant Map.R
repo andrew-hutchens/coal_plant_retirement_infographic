@@ -21,7 +21,7 @@ library(foreign)
 library(base64enc)
 
 ### Setting directories
-raw860wd <- "Data/Raw EIA 860 Data"
+raw860wd <- "Data/Raw EIA 860"
 cleanwd  <- "Data/Clean Data"
 plotwd   <- "Plots"
 
