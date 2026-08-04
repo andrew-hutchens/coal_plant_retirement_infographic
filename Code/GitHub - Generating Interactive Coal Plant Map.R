@@ -149,13 +149,16 @@ for (i in 1:length(years)) {
   }
   ## Reading in data and cleaning it
   print(paste0("Working on ", yr))
-  filefolder <- paste(raw860wd, yr, sep = "/") 
-  filename <- paste0(fileprefix, filesuffix, filetype)
-  filepath <- paste(filefolder, filename, sep = "/")
+  filepath <- file.path(raw860wd, yr, paste0(fileprefix, filesuffix, filetype))
   if (yr>=2004 | yr<=2000) {
     data <- read_excel(path = filepath, sheet = sheetname, skip = skips, col_names = T)
   } else if (yr<=2003 & yr>=2001) {
-    data <- read.dbf(file = filepath)
+    # Check if the file physically exists on the runner to catch casing issues early
+    if(!file.exists(filepath)) {
+      stop(paste("CRITICAL ERROR: The runner cannot locate the file at:", filepath))
+    }
+    # Open using a normalized string connection to bypass spaces-in-folder bugs
+    data <- read.dbf(file = normalizePath(filepath, mustWork = TRUE))
   }
   data <- data %>%
     select(all_of(vars)) %>%
@@ -305,13 +308,14 @@ for (i in 1:length(years)) {
   }
   ## Reading in data and cleaning it
   print(paste0("Working on ", yr))
-  filefolder <- paste(raw860wd, yr, sep = "/")
-  filename <- paste0(fileprefix, filesuffix, filetype)
-  filepath <- paste(filefolder, filename, sep = "/")
+  filepath <- file.path(raw860wd, yr, paste0(fileprefix, filesuffix, filetype))
   if (yr>=2004 | yr<=2000) {
     data <- read_excel(path = filepath, skip = skips, col_names = T)
   } else if (yr<=2003 & yr>=2001) {
-    data <- read.dbf(file = filepath)
+    if(!file.exists(filepath)) {
+      stop(paste("CRITICAL ERROR: The runner cannot locate the file at:", filepath))
+    }
+    data <- read.dbf(file = normalizePath(filepath, mustWork = TRUE))
   }
   data <- data %>%
     select(all_of(vars)) %>%
