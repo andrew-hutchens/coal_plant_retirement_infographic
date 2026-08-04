@@ -1,8 +1,6 @@
 name: Run Map Generation
 
 on:
-  push:
-    branches: [ main ]  # Automatically runs the script whenever you push changes to main
   workflow_dispatch:      # Adds a manual "Run workflow" button inside GitHub for testing
 
 jobs:
