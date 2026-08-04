@@ -77,7 +77,7 @@ for (i in 1:length(years)) {
   } else if (yr<=2008 & yr>=2004) {
     sheetname <- paste0("GenY", substr(yr, 3, 4))
   } else if (yr<=2003 & yr>=2001) {
-    sheetname <- paste0("GENY03", substr(yr, 3, 4))
+    sheetname <- paste0("GENY", substr(yr, 3, 4))
   }
   ## Setting spreadsheet skip lengths
   if (yr>=2011) {
