@@ -237,7 +237,7 @@ for (i in 1:length(years)) {
   } else if ((yr<=2010 & yr>=2004) | yr<=2000) {
     filetype <- ".xls"
   } else if (yr<=2003 & yr>=2001) {
-    filetype <- ".dbf"
+    filetype <- ".DBF"
   }
   ## Setting spreadsheet skip lengths
   if (yr>=2011) {
