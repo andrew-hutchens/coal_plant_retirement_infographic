@@ -6,6 +6,10 @@ on:
 jobs:
   run-r-script:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write     # Grants write permission to push changes back to the repository
+    
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
