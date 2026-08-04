@@ -1,0 +1,7 @@
+# Force Git to treat DBF files strictly as binary, stopping auto-line conversion
+*.dbf binary
+*.DBF binary
+
+# Ensure Excel files are also protected as raw binary
+*.xls binary
+*.xlsx binary
