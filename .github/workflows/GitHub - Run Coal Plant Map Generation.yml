@@ -27,7 +27,7 @@ jobs:
           Rscript -e "install.packages(c('ggplot2', 'viridis', 'maps', 'mapproj', 'usmap', 'dplyr', 'tidyr', 'readxl', 'lubridate', 'usdata', 'data.table', 'purrr', 'leaflet', 'leaflegend', 'htmlwidgets', 'htmltools', 'foreign', 'base64enc', 'scales'))"
 
       - name: Run Map Generation Script
-        run: Rscript Code/generate_map.R # Looks inside your Code folder for the script
+        run: Rscript Code/GitHub - Generating Interactive Coal Plant Map.R # Looks inside your Code folder for the script
 
       - name: Commit and Push Generated Map Back to Plots
         run: |
