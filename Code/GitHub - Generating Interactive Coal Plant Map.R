@@ -50,11 +50,11 @@ for (i in 1:length(years)) {
     folderprefix <- ""
     fileprefix <- "GeneratorY"
     filesuffix <- substr(yr, 3, 4)
-  } else if (yr<=2008 | yr>=2004) {
+  } else if (yr<=2008 & yr>=2004) {
     folderprefix <- ""
     fileprefix <- "GenY"
     filesuffix <- substr(yr, 3, 4)
-  } else if (yr<=2003 | yr>=2001) {
+  } else if (yr<=2003 & yr>=2001) {
     folderprefix <- ""
     fileprefix <- "GENY"
     filesuffix <- substr(yr, 3, 4)
@@ -225,11 +225,11 @@ for (i in 1:length(years)) {
     folderprefix <- ""
     fileprefix <- "Plant"
     filesuffix <- ""
-  } else if (yr<=2009 | yr>=2004) {
+  } else if (yr<=2009 & yr>=2004) {
     folderprefix <- ""
     fileprefix <- "PlantY"
     filesuffix <- substr(yr, 3, 4)
-  } else if (yr<=2003 | yr>=2001) {
+  } else if (yr<=2003 & yr>=2001) {
     folderprefix <- ""
     fileprefix <- "PLANTY"
     filesuffix <- substr(yr, 3, 4)
